@@ -1,0 +1,24 @@
+{
+  "date": "2025-11-12",
+  "user": "Juan Pérez",
+  "meals": [
+    {
+      "type": "desayuno",
+      "time": "07:30",
+      "description": "Omelette vegetariano con champiñones, cebolla y tomate. Acompañado de pan integral tostado.",
+      "image": "desayuno.jpg"
+    },
+    {
+      "type": "almuerzo",
+      "time": "12:45",
+      "description": "Ensalada fresca con lechuga, tomate, pepino, zanahoria y aderezo de aceite de oliva y limón.",
+      "image": "almuerzo.jpg"
+    },
+    {
+      "type": "cena",
+      "time": "19:00",
+      "description": "Pasta integral con salsa de tomate casera, verduras salteadas y queso parmesano.",
+      "image": "cena.jpg"
+    }
+  ]
+}

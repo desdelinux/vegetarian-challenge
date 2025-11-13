@@ -1,0 +1,17 @@
+# Jekyll Configuration for GitHub Pages
+title: Reto Vegetariano 6 Meses
+description: Documenta y visualiza tu progreso en el reto vegetariano de 6 meses
+url: ""
+baseurl: "/vegetarian-challenge"
+lang: es
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# Exclude files
+exclude:
+  - .gitignore
+  - README.md
+  - node_modules

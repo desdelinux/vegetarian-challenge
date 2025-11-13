@@ -1,0 +1,56 @@
+name: 🥗 Validar Comidas
+
+on:
+  pull_request:
+    paths:
+      - 'meals/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'meals/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Validar estructura de comidas
+
+    steps:
+      - name: 📥 Descargar código
+        uses: actions/checkout@v4
+
+      - name: 📦 Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: ✅ Validar comidas
+        run: node scripts/validate-meals.js
+
+      - name: 📊 Comentar resultados en PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            // Si llegamos aquí, la validación pasó
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '✅ **Validación exitosa**\n\nTodas tus comidas cumplen con los requisitos:\n- ✅ Estructura correcta\n- ✅ Imágenes presentes\n- ✅ Metadata válida\n- ✅ Formato de fechas correcto\n\n¡Listo para aprobar! 🎉'
+            });
+
+      - name: '❌ Reportar errores'
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '❌ **Validación fallida**\n\nPor favor revisa los errores en los logs de la acción y ajusta tus archivos.\n\nVerifica:\n- Formato JSON válido\n- Estructura correcta en meal.json\n- Archivos de imagen presentes\n- Descripciones con al menos 10 caracteres\n- Fechas en formato YYYY-MM-DD'
+            });

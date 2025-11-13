@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto Vegetariano 6 Meses</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-top">
+                    <div>
+                        <h1>🥗 El Reto de Randall</h1>
+                        <p class="subtitle">6 meses sin comer carne (y todos lo veremos) 💪</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Progress Section -->
+        <section class="progress-section">
+            <div class="progress-card">
+                <div class="progress-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Días Completados</span>
+                        <span class="stat-value" id="daysCompleted">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Comidas Registradas</span>
+                        <span class="stat-value" id="mealsCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Progreso</span>
+                        <span class="stat-value" id="progressPercent">0%</span>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                </div>
+                <p class="progress-label" id="progressLabel">0 de 180 días</p>
+            </div>
+        </section>
+
+        <!-- Highlights Section -->
+        <section class="highlights-section">
+            <div class="highlights-card">
+                <h2>💬 Momentos Destacados de Randall</h2>
+                <div id="highlightContent" class="highlight-content">
+                    <div class="highlight-quote" id="highlightQuote"></div>
+                    <div class="highlight-achievements" id="highlightAchievements"></div>
+                    <div class="highlight-milestone" id="highlightMilestone"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Randall Uploads Section -->
+        <section class="contribute-section">
+            <div class="contribute-card">
+                <h2>🚀 Cómo Randall Sube su Progreso</h2>
+                <p>El sistema es simple pero implacable (¡como debe ser un reto!):</p>
+                <ol>
+                    <li>📸 Toma 3 fotos de tus comidas (desayuno, almuerzo, cena)</li>
+                    <li>🔗 Abre un <strong>Pull Request</strong> con la evidencia</li>
+                    <li>⚙️ GitHub Actions valida que sea vegetariano (sin trucos)</li>
+                    <li>✅ Si pasa, aparece en el dashboard para que todos vean</li>
+                </ol>
+                <p style="margin-top: 20px; font-style: italic; color: #78350f;">
+                    ⚠️ No hay forma de hacer trampa. La máquina lo sabrá. 🤖
+                </p>
+                <a href="https://github.com/desdelinux/vegetarian-challenge/blob/main/CONTRIBUTING.md" target="_blank" class="btn-primary">
+                    📖 Ver Instrucciones Detalladas
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <div class="gallery-header">
+                <h2>📸 Las Comidas Vegetarianas de Randall</h2>
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="desayuno">Desayuno</button>
+                    <button class="filter-btn" data-filter="almuerzo">Almuerzo</button>
+                    <button class="filter-btn" data-filter="cena">Cena</button>
+                </div>
+            </div>
+
+            <div id="mealsGallery" class="meals-gallery">
+                <div class="empty-state">
+                    <p>📭 Aún no hay comidas registradas</p>
+                    <p class="empty-hint">¡Comienza a documentar tu reto vegetariano!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section">
+            <h2>📅 El Viaje de Randall (Día a Día)</h2>
+            <div id="timelineContainer" class="timeline-container">
+                <div class="empty-state">
+                    <p>No hay datos para mostrar</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🎯 El Reto de Randall © 2025 | Apoyando a un valiente vegetariano 🥗 | <a href="https://github.com/desdelinux/vegetarian-challenge" target="_blank" style="color: inherit;">Ver repositorio</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
